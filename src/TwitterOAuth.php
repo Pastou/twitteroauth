@@ -220,10 +220,12 @@ class TwitterOAuth extends Config
     /**
      * Return a response with in its body a `processing_info` object containing the state of the uploaded file.
      *
-     * @param $mediaIdString
+     * @param string $mediaIdString
+     *
      * @return array|object
      */
-    public function getUploadFileState($mediaIdString) {
+    public function getUploadFileState($mediaIdString) 
+    {
       return $this->http('GET', self::UPLOAD_HOST, 'media/upload', [
         'command' => 'STATUS',
         'media_id' => $mediaIdString
